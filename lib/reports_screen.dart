@@ -97,7 +97,7 @@ class ReportsScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: budgetStatus.contains('crossed') ? Colors.red : Colors.green,
+                color: budgetStatus.contains('Over') ? Colors.red : Colors.green,
               ),
             ),
           ],

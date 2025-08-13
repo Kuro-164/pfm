@@ -126,9 +126,20 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: expenses.isEmpty
-          ? const Center(child: Text('No expenses yet', style: TextStyle(fontSize: 18, color: Colors.grey)))
+          ? Column(
+        children: [
+          // NEW: Budget edit widget
+          budgetManager.buildBudgetEditWidget(context, () => setState(() {})),
+          const Expanded(
+            child: Center(child: Text('No expenses yet', style: TextStyle(fontSize: 18, color: Colors.grey))),
+          ),
+        ],
+      )
           : Column(
         children: [
+          // NEW: Budget edit widget
+          budgetManager.buildBudgetEditWidget(context, () => setState(() {})),
+
           // Total and Budget Status
           Padding(
             padding: const EdgeInsets.all(16),
@@ -136,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Text('Total Expenses: ₹${total.toStringAsFixed(2)}', style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 8),
-                Text(budgetStatus, style: TextStyle(color: budgetStatus.contains('Over') ? Colors.red : Colors.green, fontSize: 16)),
+                Text(budgetStatus, style: TextStyle(color: budgetManager.getBudgetStatusColor(total), fontSize: 16)), // UPDATED COLOR
               ],
             ),
           ),
@@ -148,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
               itemBuilder: (context, index) {
                 final expense = expenses[index];
                 return GestureDetector(
-                  onLongPress: () => showContextMenu(context, index),
+                  onTap : () => showContextMenu(context, index),
                   child: ListTile(
                     title: Text(expense['title'] ?? 'Expense'),
                     subtitle: Text(expense['category'] ?? ''),
