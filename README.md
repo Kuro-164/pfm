@@ -1,16 +1,40 @@
-# pfm
+# 📱 PFM – Flutter App
 
-A new Flutter project.
+PFM (Personal Finance Manager) is a simple Flutter mobile application created for academic purposes. The app helps users manage and track their daily expenses in an organized way.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+* Add and manage expenses
+* Simple and clean user interface
+* Custom app icons and assets
+* Works on Android and iOS
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ Technologies Used
+
+* Flutter
+* Dart
+
+---
+
+## ▶️ How to Run
+
+```bash
+flutter pub get
+flutter run
+```
+
+---
+
+## 🎓 Purpose
+
+This project was developed as a Flutter practical to demonstrate basic app development, asset usage, and project structure.
+
+---
+
+## 👤 Author
+
+Karthikeyan Nadar
